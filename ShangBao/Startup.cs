@@ -31,7 +31,7 @@ namespace ShangBao
             // Add framework services.
             services.AddMvc();
             var sqlConnectionString = Configuration.GetConnectionString("MySQLConnectionString");
-            services.AddDbContext<DataContext>(options=>options.UseMySQL(sqlConnectionString));
+            //services.AddDbContext<DataContext>(options=>options.UseMySQL(sqlConnectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
