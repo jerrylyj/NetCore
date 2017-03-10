@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  shangbao:
+    image: shangbao
+    build:
+      context: ./ShangBao
+      dockerfile: Dockerfile
+
+  shangbaoweb:
+    image: shangbaoweb
+    build:
+      context: ./ShangBaoWeb
+      dockerfile: Dockerfile

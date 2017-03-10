@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShangBao", "ShangBao\ShangBao.csproj", "{E80A70E5-FEE2-4CD9-A40B-B88779699F23}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7B7E5AAE-0570-441F-8C26-98B1EBD8C6A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShangBaoWeb", "ShangBaoWeb\ShangBaoWeb.csproj", "{526A80B1-4BC4-4058-A32B-D66EE25E4A72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E80A70E5-FEE2-4CD9-A40B-B88779699F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E80A70E5-FEE2-4CD9-A40B-B88779699F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E80A70E5-FEE2-4CD9-A40B-B88779699F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E80A70E5-FEE2-4CD9-A40B-B88779699F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7E5AAE-0570-441F-8C26-98B1EBD8C6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7E5AAE-0570-441F-8C26-98B1EBD8C6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7E5AAE-0570-441F-8C26-98B1EBD8C6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7E5AAE-0570-441F-8C26-98B1EBD8C6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526A80B1-4BC4-4058-A32B-D66EE25E4A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526A80B1-4BC4-4058-A32B-D66EE25E4A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526A80B1-4BC4-4058-A32B-D66EE25E4A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526A80B1-4BC4-4058-A32B-D66EE25E4A72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
