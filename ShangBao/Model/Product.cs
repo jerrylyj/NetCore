@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShangBao.Model
 {
-    public class Product
+    public class Product:BaseEntity
     {
         public String Name { get; set; }
  

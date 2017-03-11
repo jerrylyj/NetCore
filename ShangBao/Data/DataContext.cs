@@ -1,35 +1,42 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MySQL.Data.EntityFrameworkCore.Extensions;
 using ShangBao.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ShangBao.Data
 {
     public class DataContext : DbContext
     {
-        //public DbSet<User> Users { set; get; }
-        
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //    => optionsBuilder.UseMySQL(@"Server=localhost;database=efcore;uid=root;pwd=root");
 
-        public DataContext(DbContextOptions<DataContext> options)
-             : base(options)
-         { }
-         public DbSet<User> User { get; set; }
-         public DbSet<Product> Product { get; set; }
-         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-         //{
-         //}
- 
-         /// <summary>
-         /// 配置属性和模型关系等操作
-         /// </summary>
-         /// <param name="modelBuilder"></param>
-         protected override void OnModelCreating(ModelBuilder modelBuilder)
+        
+         public DbSet<User> Users { get; set; }
+         public DbSet<Product> Products { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //var builder = new ConfigurationBuilder()
+            //            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            //var configuration = builder.Build();
+
+            //string connectionString = configuration.GetConnectionString("MySQLConnectionString");
+            string connectionString = "Server=127.0.0.1;database=efcore;uid=root;pwd=root;";
+
+            optionsBuilder.UseMySQL(connectionString);
+        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //   => optionsBuilder
+        //       .UseMySql(@"Server=localhost;database=efcore;uid=root;pwd=root;");
+        /// <summary>
+        /// 配置属性和模型关系等操作
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
          {
              modelBuilder.Entity<User>().HasMany(a => a.Products).WithOne(a => a.Owner);
  
@@ -39,14 +46,7 @@ namespace ShangBao.Data
          /// 重写SaveChanges 方法，添加一些自定义操作
          /// </summary>
          /// <returns></returns>
-         public override int SaveChanges()
-         {
-             ChangeTracker.DetectChanges();
- 
-             SetSystemProperty();
-            
-             return base.SaveChanges();
-         }
+         
  
          private void SetSystemProperty()
          {
